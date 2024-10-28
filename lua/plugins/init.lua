@@ -1,38 +1,30 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
     config = function()
       require "configs.conform"
     end,
   },
-
-  -- These are some examples, uncomment them if you want to see them work!
+  {
+    "nvim-tree/nvim-tree.lua",
+    lazy = false,
+    opts = {
+      git = { enable = true },
+    },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
   -- {
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     require("nvchad.configs.lspconfig").defaults()
-  --     require "configs.lspconfig"
-  --   end,
+  --   "mbbill/undotree",
+  --   lazy = false,
   -- },
-  --
-  -- {
-  -- 	"williamboman/mason.nvim",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"lua-language-server", "stylua",
-  -- 			"html-lsp", "css-lsp" , "prettier"
-  -- 		},
-  -- 	},
-  -- },
-  --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "tpope/vim-rhubarb",
+    lazy = false,
+  },
 }
